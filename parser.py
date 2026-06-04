@@ -23,34 +23,62 @@ def get_source(parts):
     for part in parts:
         if part.endswith(":"):
             source = part.strip(":")
-
-    return source
-
-
-def get_message(first_line):
-    before, sep, after = first_line.partition(":")
-    message = after.strip()
-
-    return message
+            return source
 
 
-def main():
+def get_message(line, event_type):
+    before, sep, after = line.rpartition(":")
+
+    #The message is the part after the last colon, but we need to remove the event type from it if it exists.
+    uncleaned_message = after.strip()
+
+    if uncleaned_message.endswith(event_type):
+        cleaned_message = uncleaned_message[:-len(event_type)].strip()
+        return cleaned_message
+    else:
+        return uncleaned_message
+
+
+def get_event_type(line):
+
+    before, sep, after = line.partition("-")
+    if sep == "-":
+        event_type = after.strip()
+        return event_type
+    else:
+        return
+
+
+def parser():
     raw_logs = get_raw_logs()
 
-    #First line (test)
-    for line in raw_logs:
-        first_line = line
-        break
-    parts = first_line.split() #For timestamp and source
+    parsed_logs = []
 
-    #Main
-    timestamp = get_timestamp(parts)
-    source = get_source(parts)
-    message = get_message(first_line)
+    for _ in raw_logs:
+        line = _
+        
+        parts = line.split() #For timestamp and source
 
-    print(f"Time: {timestamp}")
-    print(f"Source: {source}")
-    print(f"Message: {message}")
-    return
+        timestamp = get_timestamp(parts)
+        source = get_source(parts)
+        event_type = get_event_type(line)
+        message = get_message(line, event_type)
 
-main()
+
+        parsed_logs.append({"Timestamp":timestamp, "Source":source, "Message":message, "Event Type":event_type})
+
+
+    for logs in parsed_logs:
+        for key, value in logs.items():
+            print(f"{key}: {value}")
+        print("\n")
+
+
+    return parsed_logs
+
+def main():
+    parser()
+
+
+if __name__ == "__main__":
+    main()
