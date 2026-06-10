@@ -1,5 +1,5 @@
 def get_raw_logs():
-#Reads sample logs, appends every line to a raw log list.
+    #Reads sample logs, appends every line to a raw log list.
     raw_logs = []
 
     with open("sample_logs.log", "r") as logs:
@@ -27,46 +27,51 @@ def get_source(parts):
 
 
 def get_message(line, event_type):
-    before, sep, after = line.rpartition(":")
+    before, sep, after = line.partition(":")
 
     #The message is the part after the last colon, but we need to remove the event type from it if it exists.
     uncleaned_message = after.strip()
 
     if uncleaned_message.endswith(event_type):
-        cleaned_message = uncleaned_message[:-len(event_type)].strip()
-        return cleaned_message
+        cleaned_message = uncleaned_message[:-len(event_type)]
+        cleaned_message = cleaned_message.replace(" - ", "")
+        return cleaned_message.strip()
     else:
         return uncleaned_message
 
 
 def get_event_type(line):
-
-    before, sep, after = line.partition("-")
-    if sep == "-":
+    #Separator must be " - " with spaces in order to avoid confusing it with other dashes in the log line.
+    before, sep, after = line.partition(" - ")
+    if sep == " - ":
         event_type = after.strip()
         return event_type
     else:
-        return
+        return "N/A"
 
 
 def parser():
     raw_logs = get_raw_logs()
 
     parsed_logs = []
+    try: 
+        for _ in raw_logs:
+            line = _
+            
+            parts = line.split() #For timestamp and source
 
-    for _ in raw_logs:
-        line = _
-        
-        parts = line.split() #For timestamp and source
-
-        timestamp = get_timestamp(parts)
-        source = get_source(parts)
-        event_type = get_event_type(line)
-        message = get_message(line, event_type)
+            timestamp = get_timestamp(parts)
+            source = get_source(parts)
+            event_type = get_event_type(line)
+            message = get_message(line, event_type)
 
 
-        parsed_logs.append({"Timestamp":timestamp, "Source":source, "Message":message, "Event Type":event_type})
-
+            parsed_logs.append({"Timestamp":timestamp, "Source":source, "Message":message, "Event Type":event_type})
+    
+    except Exception as e:
+        message = f"Log parsing failed: sample logs may be malformed. Error: {str(e)}"
+        print(message)
+        return message
 
     for logs in parsed_logs:
         for key, value in logs.items():
