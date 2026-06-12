@@ -2,7 +2,7 @@ def get_raw_logs():
     #Reads sample logs, appends every line to a raw log list.
     raw_logs = []
 
-    with open("sample_logs.log", "r") as logs:
+    with open("data/sample_logs.log", "r") as logs:
         for _ in logs:
             line = _.strip()
             raw_logs.append(line)
@@ -50,6 +50,13 @@ def get_event_type(line):
         return "N/A"
 
 
+def get_ip(parts):
+    for part in parts:
+        #Will probably change later. For now we just check if the part has 3 dots in it, which follows the format of a typical IP address.
+        if part.count(".") == 3:
+            return part    
+    return "N/A"
+
 def parser():
     raw_logs = get_raw_logs()
 
@@ -60,13 +67,14 @@ def parser():
             
             parts = line.split() #For timestamp and source
 
+            ip = get_ip(parts)
             timestamp = get_timestamp(parts)
             source = get_source(parts)
             event_type = get_event_type(line)
             message = get_message(line, event_type)
 
 
-            parsed_logs.append({"Timestamp":timestamp, "Source":source, "Message":message, "Event Type":event_type})
+            parsed_logs.append({"IP":ip,"Timestamp":timestamp, "Source":source, "Message":message, "Event Type":event_type})
     
     except Exception as e:
         message = f"Log parsing failed: sample logs may be malformed. Error: {str(e)}"
@@ -81,9 +89,4 @@ def parser():
 
     return parsed_logs
 
-def main():
-    parser()
-
-
-if __name__ == "__main__":
-    main()
+print(parser())
