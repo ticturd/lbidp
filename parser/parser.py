@@ -81,12 +81,5 @@ def parser():
         print(message)
         return message
 
-    for logs in parsed_logs:
-        for key, value in logs.items():
-            print(f"{key}: {value}")
-        print("\n")
-
-
     return parsed_logs
 
-print(parser())
