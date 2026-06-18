@@ -58,6 +58,8 @@ def parser():
             parts = line.split() #For timestamp and source
 
             ip = get_ip(parts)
+            if ip == "N/A":
+                continue
             timestamp = get_timestamp(parts)
             source = get_source(parts)
             event_type = get_event_type(line)
