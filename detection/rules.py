@@ -1,16 +1,30 @@
 from parser.parser import parser
 
 failed_attempts = {}
-flagged_ips = set() #Using set to prevent duplicate ips from being added, rather than a list.
+flagged_ips = {}
+invalid_users = {}
 
-def detect(log):
-    ip = log["IP"]
-    message = log["Message"]
+#Thresholds for flagging will be able to be changed by the user later. Right now it is just hard coded for testing purposes.
 
-    if "Failed password" in message:
-        failed_attempts[ip] = failed_attempts.get(ip, 0) + 1
+#Note: Message is converted to lowercase in main.
+def detect_bruteforce(ip, message):
+    if "failed password" not in message:
+        return
 
-        if failed_attempts[ip] >= 5 and ip not in flagged_ips:
-            print(f"ALERT: Brute force attack detected from port [{ip}]")
-            flagged_ips.add(ip)
+    failed_attempts[ip] = failed_attempts.get(ip, 0) + 1    #If IP exists, adds 1 to its current count. Otherwise it starts from 1
+
+    if failed_attempts[ip] >= 5 and flagged_ips.get(ip) != "bruteforce":
+        flagged_ips[ip] = "bruteforce"
+
+
+
+def detect_user_enumeration(ip, message):
+    if "invalid user" not in message:
+        return
+    
+    invalid_users[ip] = invalid_users.get(ip, 0) + 1    #^^^
+
+    if invalid_users[ip] >= 3 and flagged_ips.get(ip) != "user_enumeration":
+        flagged_ips[ip] = "user_enumeration"
+        print(f"User enumeration detected from IP: {ip}")
 

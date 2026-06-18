@@ -27,10 +27,7 @@ def get_source(parts):
 
 
 def get_message(line, event_type):
-    before, sep, after = line.partition(":")
-
-    #The message is the part after the last colon, but we need to remove the event type from it if it exists.
-    uncleaned_message = after.strip()
+    uncleaned_message = line.split(":", 2)[-1].strip() #This is doing 3 operations at once. In short, it just splits the line into three parts: timestamp and source, the middle parts, actual message.
 
     if uncleaned_message.endswith(event_type):
         cleaned_message = uncleaned_message[:-len(event_type)]
@@ -76,8 +73,8 @@ def parser():
 
             parsed_logs.append({"IP":ip,"Timestamp":timestamp, "Source":source, "Message":message, "Event Type":event_type})
     
-    except Exception as e:
-        message = f"Log parsing failed: sample logs may be malformed. Error: {str(e)}"
+    except Exception as error:
+        message = f"Log parsing failed: sample logs may be malformed. Error: {str(error)}"
         print(message)
         return message
 
