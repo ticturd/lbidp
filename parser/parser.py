@@ -26,20 +26,13 @@ def get_source(parts):
             return source
 
 
-def get_message(line, event_type):
-    uncleaned_message = line.split(":", 2)[-1].strip() #This is doing 3 operations at once. In short, it just splits the line into three parts: timestamp and source, the middle parts, actual message.
-
-    if uncleaned_message.endswith(event_type):
-        cleaned_message = uncleaned_message[:-len(event_type)]
-        cleaned_message = cleaned_message.replace(" - ", "")
-        return cleaned_message.strip()
-    else:
-        return uncleaned_message
+def get_message(line):
+    message = line.split(":", 2)[-1].strip()  #This is doing 3 operations at once. In short, it just splits the line into three parts: timestamp and source, the middle parts, actual message.
+    return message
 
 
 def get_event_type(line):
-    #Separator must be " - " with spaces in order to avoid confusing it with other dashes in the log line.
-    before, sep, after = line.partition(" - ")
+    before, sep, after = line.partition(" - ")    #Separator must be " - " with spaces in order to avoid confusing it with other dashes in the log line.
     if sep == " - ":
         event_type = after.strip()
         return event_type
@@ -68,7 +61,7 @@ def parser():
             timestamp = get_timestamp(parts)
             source = get_source(parts)
             event_type = get_event_type(line)
-            message = get_message(line, event_type)
+            message = get_message(line)
 
 
             parsed_logs.append({"IP":ip,"Timestamp":timestamp, "Source":source, "Message":message, "Event Type":event_type})

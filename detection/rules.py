@@ -15,8 +15,8 @@ def detect_bruteforce(ip, message):
 
     if failed_attempts[ip] >= 5 and flagged_ips.get(ip) != "bruteforce":
         flagged_ips[ip] = "bruteforce"
-
-
+        print(f"Bruteforce detected from IP: {ip}")
+        return "STOP"
 
 def detect_user_enumeration(ip, message):
     if "invalid user" not in message:
@@ -27,4 +27,4 @@ def detect_user_enumeration(ip, message):
     if invalid_users[ip] >= 3 and flagged_ips.get(ip) != "user_enumeration":
         flagged_ips[ip] = "user_enumeration"
         print(f"User enumeration detected from IP: {ip}")
-
+        return "STOP"
