@@ -1,4 +1,5 @@
 from parser.parser import parser
+from detection.utilities import sensitive_users, get_username
 
 failed_attempts = {}
 flagged_ips = {}
@@ -33,3 +34,25 @@ def detect_user_enumeration(ip, message):
     if invalid_users[ip] >= 3 and "user_enumeration" not in flagged_ips[ip]:
         flagged_ips[ip].append("user_enumeration")
         print(f"User enumeration detected from IP: {ip}")
+
+
+def detect_break_in(ip, message):
+    # Only act on successful logins
+    if "accepted password" not in message:
+        return
+
+    # No username = nothing to check
+    username = get_username(message)
+    if username is None:
+        return
+
+    # Sensitive user login
+    if username in sensitive_users and "break_in" not in flagged_ips[ip]:
+        flagged_ips[ip].append("break_in")
+        print(f"Break in from IP {ip} and Username {username}")
+
+    # Login after bruteforce
+    elif "bruteforce" in flagged_ips[ip] and "break_in" not in flagged_ips[ip]:
+        flagged_ips[ip].append("break_in")
+        print(f"Break in detected from IP {ip} and Username {username}")
+    

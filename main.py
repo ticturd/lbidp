@@ -1,7 +1,6 @@
 from parser.parser import parser
 from detection.rules import init_ip_flag, detect_bruteforce, detect_user_enumeration
 
-
 def detect(logs):
     for log in logs:
         ip = log["IP"]
@@ -12,13 +11,11 @@ def detect(logs):
         detect_user_enumeration(ip, message)
 
 
-    
+        
 
 def main():
     #Parses all the logs into a list format.
     logs = parser()
-
-    
     detect(logs)
 
 
