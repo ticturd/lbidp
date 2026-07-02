@@ -1,5 +1,5 @@
 from parser.parser import parser
-from detection.rules import init_ip_flag, detect_bruteforce, detect_user_enumeration
+from detection.rules import init_ip_flag, detect_bruteforce, detect_user_enumeration, detect_break_in
 
 def detect(logs):
     for log in logs:
@@ -9,7 +9,7 @@ def detect(logs):
         init_ip_flag(ip)
         detect_bruteforce(ip, message)
         detect_user_enumeration(ip, message)
-
+        detect_break_in(ip, message)
 
         
 

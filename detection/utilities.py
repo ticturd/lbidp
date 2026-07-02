@@ -8,7 +8,7 @@ sensitive_users = ["root", "admin", "administrator", "sysadmin", "ubuntu", "cent
 def get_username(message):
     parts = message.split()     #Splitting message into parts so i can identify keywords in the log line for the username.
 
-    if "invalid user" in parts:
+    if "invalid user" in message:
         return parts[parts.index("user") + 1]
 
     elif "for" in parts:
