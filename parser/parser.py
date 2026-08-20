@@ -1,13 +1,25 @@
-def get_raw_logs():
-    #Reads sample logs, appends every line to a raw log list.
-    raw_logs = []
+import os   #Using this for file path stuff
 
-    with open("data/sample_logs.log", "r") as logs:
-        for _ in logs:
-            line = _.strip()
-            raw_logs.append(line)
+def get_log_file():
+    
+    demo_log_files = sorted(os.listdir("data/demo_logs"))
 
-    return raw_logs
+    for index, file in enumerate(demo_log_files):
+        print(f"{index + 1}. {file}")
+
+    while True:
+        try:
+            chosen_file = int(input())
+            if chosen_file in range(1, len(demo_log_files) + 1):
+                used_file = demo_log_files[chosen_file - 1]
+                return os.path.join("data/demo_logs", used_file)
+            else:
+                print("Choice out of range.")
+        except ValueError:
+            print("Incorrect value. Please enter a valid integer.")
+
+
+    
 
 
 def get_timestamp(parts):
@@ -30,7 +42,7 @@ def get_message(line):
     message = line.split(":", 2)[-1].strip()  #This is doing 3 operations at once. In short, it just splits the line into three parts: timestamp and source, the middle parts, actual message.
     return message
 
-
+#Can't remember why I'm getting this, might have later refined this in rules.py but I'm not sure.
 def get_event_type(line):
     before, sep, after = line.partition(" - ")    #Separator must be " - " with spaces in order to avoid confusing it with other dashes in the log line.
     if sep == " - ":
@@ -47,23 +59,26 @@ def get_ip(parts):
             return part    
     return "N/A"
 
-def parser():
-    raw_logs = get_raw_logs()
+def parser(file_path):
+    raw_logs = []   
+    with open(file_path, "r") as file:
+        for line in file:
+            raw_logs.append(line.strip())
+
 
     parsed_logs = []
     try: 
-        for _ in raw_logs:
-            line = _
-            
-            parts = line.split() #For timestamp and source
+        for log in raw_logs:           
+            parts = log.split() #For timestamp and source
 
             ip = get_ip(parts)
             if ip == "N/A":
                 continue
+
             timestamp = get_timestamp(parts)
             source = get_source(parts)
-            event_type = get_event_type(line)
-            message = get_message(line)
+            event_type = get_event_type(log)
+            message = get_message(log)
 
 
             parsed_logs.append({"IP":ip,"Timestamp":timestamp, "Source":source, "Message":message, "Event Type":event_type})
