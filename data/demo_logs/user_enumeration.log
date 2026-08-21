@@ -1,0 +1,120 @@
+Dec 10 07:28:05 LabSZ sshd[24245]: Received disconnect from 112.95.230.3: 11: Bye Bye [preauth]
+Dec 10 10:55:43 LabSZ sshd[24953]: pam_unix(sshd:auth): check pass; user unknown
+Dec 10 11:03:09 LabSZ sshd[25426]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=183.62.140.253  user=root
+Dec 10 11:11:04 LabSZ sshd[25981]: Received disconnect from 183.62.140.253: 11: Bye Bye [preauth]
+Dec 10 12:18:01 LabSZ sshd[30424]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=183.62.140.253  user=root
+Dec 10 12:33:30 LabSZ sshd[31431]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=183.62.140.253  user=root
+Dec 10 12:37:35 LabSZ sshd[31684]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=183.62.140.253  user=root
+Dec 10 14:43:28 LabSZ sshd[8966]: Received disconnect from 183.62.140.253: 11: Bye Bye [preauth]
+Dec 10 15:46:37 LabSZ sshd[13192]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=183.62.140.253  user=root
+Dec 10 16:49:05 LabSZ sshd[17200]: Received disconnect from 183.62.140.253: 11: Bye Bye [preauth]
+Dec 10 16:58:50 LabSZ sshd[17816]: Received disconnect from 183.62.140.253: 11: Bye Bye [preauth]
+Dec 10 19:42:58 LabSZ sshd[19655]: Received disconnect from 123.235.32.19: 11: Bye Bye [preauth]
+Dec 11 18:36:26 LabSZ sshd[27348]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=183.63.172.52  user=root
+Dec 11 20:49:20 LabSZ sshd[2981]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=183.63.172.52  user=root
+Dec 12 00:44:50 LabSZ sshd[3831]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=183.129.173.73  user=root
+Dec 12 01:11:14 LabSZ sshd[5277]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=183.129.173.73  user=root
+Dec 12 04:06:07 LabSZ sshd[12300]: Connection closed by 183.238.178.195 [preauth]
+Dec 12 06:51:48 LabSZ sshd[22926]: Connection closed by 183.238.178.195 [preauth]
+Dec 12 16:11:12 LabSZ sshd[29437]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=60.2.12.12  user=root
+Dec 12 17:14:05 LabSZ sshd[30248]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=183.63.172.52  user=root
+Dec 12 23:54:31 LabSZ sshd[31910]: reverse mapping checking getaddrinfo for 225-138-140-158.myrepublic.com.sg [158.140.138.225] failed - POSSIBLE BREAK-IN ATTEMPT!
+Dec 14 08:17:31 LabSZ sshd[9022]: input_userauth_request: invalid user admin [preauth]
+Dec 15 00:30:02 LabSZ sshd[11396]: pam_unix(sshd:auth): check pass; user unknown
+Dec 15 04:28:06 LabSZ sshd[12656]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=14.116.171.251  user=root
+Dec 15 05:19:01 LabSZ sshd[15605]: Received disconnect from 14.116.171.251: 11: Bye Bye [preauth]
+Dec 16 15:02:40 LabSZ sshd[27780]: pam_unix(sshd:auth): check pass; user unknown
+Dec 16 16:32:51 LabSZ sshd[28727]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=202.107.104.119  user=root
+Dec 16 18:05:04 LabSZ sshd[29939]: Connection closed by 183.238.178.195 [preauth]
+Dec 16 21:20:28 LabSZ sshd[8743]: Connection closed by 183.238.178.195 [preauth]
+Dec 17 01:49:08 LabSZ sshd[13721]: Connection closed by 183.129.154.138 [preauth]
+Dec 17 04:23:09 LabSZ sshd[22262]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=183.129.154.138  user=root
+Dec 17 04:30:14 LabSZ sshd[22633]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=183.129.154.138  user=root
+Dec 17 08:45:44 LabSZ sshd[28463]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=183.129.170.130  user=root
+Dec 17 10:03:26 LabSZ sshd[32734]: Connection closed by 183.129.170.130 [preauth]
+Dec 19 12:53:09 LabSZ sshd[10970]: Received disconnect from 159.89.16.221: 11: Bye Bye [preauth]
+Dec 20 11:05:31 LabSZ sshd[14847]: pam_unix(sshd:auth): check pass; user unknown
+Dec 23 03:05:52 LabSZ sshd[26605]: Received disconnect from 203.190.163.125: 11: Bye Bye [preauth]
+Dec 23 06:07:57 LabSZ sshd[27321]: Received disconnect from 183.136.178.26: 11: Bye Bye [preauth]
+Dec 30 04:29:12 LabSZ sshd[5725]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=139.219.191.138  user=root
+Dec 30 05:53:30 LabSZ sshd[10052]: Received disconnect from 139.219.191.138: 11: Bye Bye [preauth]
+Dec 30 07:15:30 LabSZ sshd[14677]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=139.219.191.138  user=root
+Dec 30 07:30:12 LabSZ sshd[15476]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=139.219.191.138  user=root
+Dec 30 10:15:26 LabSZ sshd[24023]: Received disconnect from 139.219.191.138: 11: Bye Bye [preauth]
+Dec 30 11:25:00 LabSZ sshd[27639]: Received disconnect from 139.219.191.138: 11: Bye Bye [preauth]
+Dec 31 07:54:29 LabSZ sshd[578]: Received disconnect from 1.34.138.144: 11: Bye Bye [preauth]
+Jan  1 02:23:12 LabSZ sshd[3660]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=117.52.87.214 
+Jan  1 03:21:17 LabSZ sshd[3862]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=162.223.162.34  user=root
+Jan  1 14:50:45 LabSZ sshd[8014]: PAM service(sshd) ignoring max retries; 6 > 3
+Jan  1 14:57:53 LabSZ sshd[8121]: Disconnecting: Too many authentication failures for root [preauth]
+Jan  1 18:08:41 LabSZ sshd[11108]: Disconnecting: Too many authentication failures for root [preauth]
+Jan  1 18:08:47 LabSZ sshd[11110]: PAM 5 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=58.242.83.25  user=root
+Jan  1 18:20:13 LabSZ sshd[11295]: Disconnecting: Too many authentication failures for root [preauth]
+Jan  1 18:56:38 LabSZ sshd[11858]: Disconnecting: Too many authentication failures for root [preauth]
+Jan  1 19:06:27 LabSZ sshd[12036]: Disconnecting: Too many authentication failures for root [preauth]
+Jan  2 00:31:48 LabSZ sshd[18745]: Disconnecting: Too many authentication failures for root [preauth]
+Jan  2 00:45:30 LabSZ sshd[18999]: PAM service(sshd) ignoring max retries; 6 > 3
+Jan  2 01:06:29 LabSZ sshd[19425]: PAM service(sshd) ignoring max retries; 6 > 3
+Jan  2 03:15:45 LabSZ sshd[21952]: Disconnecting: Too many authentication failures for root [preauth]
+Jan  2 04:55:16 LabSZ sshd[24187]: PAM 5 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=58.242.83.25  user=root
+Jan  2 07:12:51 LabSZ sshd[27868]: Disconnecting: Too many authentication failures for root [preauth]
+Jan  2 07:58:01 LabSZ sshd[29374]: PAM 5 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=58.242.83.25  user=root
+Jan  2 09:12:36 LabSZ sshd[31275]: Disconnecting: Too many authentication failures for root [preauth]
+Jan  2 18:24:48 LabSZ sshd[9182]: Disconnecting: Too many authentication failures for root [preauth]
+Jan  2 19:25:28 LabSZ sshd[9572]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=183.63.110.206  user=root
+Jan  2 23:35:27 LabSZ sshd[18255]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=183.63.110.206  user=root
+Jan  3 00:39:48 LabSZ sshd[20522]: Connection closed by 183.63.110.206 [preauth]
+Jan  3 01:51:56 LabSZ sshd[26386]: Connection closed by 183.192.189.131 [preauth]
+Jan  3 01:56:00 LabSZ sshd[26752]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=183.63.110.206  user=root
+Jan  3 02:28:30 LabSZ sshd[29552]: Connection closed by 183.63.110.206 [preauth]
+Jan  3 02:32:09 LabSZ sshd[29861]: Connection closed by 183.63.110.206 [preauth]
+Jan  3 04:32:45 LabSZ sshd[7562]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=183.63.110.206  user=root
+Jan  3 04:59:37 LabSZ sshd[9391]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=183.63.110.206  user=root
+Jan  3 06:14:50 LabSZ sshd[13477]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=183.63.110.206  user=root
+Jan  3 07:02:37 LabSZ sshd[16307]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=183.192.189.131  user=root
+Jan  3 07:18:14 LabSZ sshd[17153]: reverse mapping checking getaddrinfo for . [183.192.189.131] failed - POSSIBLE BREAK-IN ATTEMPT!
+Jan  3 08:24:17 LabSZ sshd[21010]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=183.192.189.131  user=root
+Jan  3 09:55:24 LabSZ sshd[26472]: Connection closed by 183.192.189.131 [preauth]
+Jan  3 09:59:47 LabSZ sshd[26738]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=183.192.189.131  user=root
+Jan  3 10:35:33 LabSZ sshd[28051]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=59.63.188.30  user=root
+Jan  3 12:21:19 LabSZ sshd[32672]: Connection closed by 183.192.189.131 [preauth]
+Jan  3 14:34:21 LabSZ sshd[2532]: Disconnecting: Too many authentication failures for root [preauth]
+Jan  3 16:14:26 LabSZ sshd[3807]: PAM 5 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=218.87.109.156  user=root
+Jan  3 19:56:55 LabSZ sshd[7183]: PAM service(sshd) ignoring max retries; 6 > 3
+Jan  3 20:04:32 LabSZ sshd[7283]: PAM 5 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=59.63.188.30  user=root
+Jan  3 20:43:21 LabSZ sshd[7835]: Disconnecting: Too many authentication failures for root [preauth]
+Jan  3 21:28:32 LabSZ sshd[8580]: PAM service(sshd) ignoring max retries; 6 > 3
+Jan  4 01:26:11 LabSZ sshd[12158]: reverse mapping checking getaddrinfo for ip-187-119-142-14.user.vivozap.com.br [187.119.142.14] failed - POSSIBLE BREAK-IN ATTEMPT!
+Jan  4 02:55:32 LabSZ sshd[14226]: PAM service(sshd) ignoring max retries; 6 > 3
+Jan  4 03:18:45 LabSZ sshd[15039]: input_userauth_request: invalid user evandro [preauth]
+Jan  4 03:20:55 LabSZ sshd[15116]: Disconnecting: Too many authentication failures for root [preauth]
+Jan  4 04:24:58 LabSZ sshd[17066]: PAM 5 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=218.87.109.156  user=root
+Jan  4 04:34:23 LabSZ sshd[17381]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=59.63.188.30  user=root
+Jan  4 05:13:02 LabSZ sshd[18614]: PAM 5 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=59.63.188.30  user=root
+Jan  4 05:29:36 LabSZ sshd[19067]: PAM 5 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=218.87.109.156  user=root
+Jan  4 06:49:19 LabSZ sshd[21473]: Disconnecting: Too many authentication failures for root [preauth]
+Jan  4 09:01:21 LabSZ sshd[25086]: PAM service(sshd) ignoring max retries; 6 > 3
+Jan  4 09:27:18 LabSZ sshd[25778]: Disconnecting: Too many authentication failures for root [preauth]
+Jan  4 10:36:29 LabSZ sshd[27846]: PAM service(sshd) ignoring max retries; 6 > 3
+Jan  4 11:41:56 LabSZ sshd[29778]: PAM service(sshd) ignoring max retries; 6 > 3
+Jan  4 11:51:01 LabSZ sshd[30038]: PAM 5 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=59.63.188.30  user=root
+Jan  4 13:30:11 LabSZ sshd[31927]: Disconnecting: Too many authentication failures for root [preauth]
+Jan  4 16:15:05 LabSZ sshd[2478]: PAM service(sshd) ignoring max retries; 6 > 3
+Jan  5 04:54:53 LabSZ sshd[14060]: Disconnecting: Too many authentication failures for root [preauth]
+Jan  5 06:48:33 LabSZ sshd[15044]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=59.63.188.30  user=root
+Jan  5 11:58:46 LabSZ sshd[18495]: PAM 5 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=59.63.188.30  user=root
+Jan  5 11:59:08 LabSZ sshd[18499]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=59.63.188.30  user=root
+Jan  6 00:52:29 LabSZ sshd[21434]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=103.99.0.122 
+Jan  7 00:33:09 LabSZ sshd[26559]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=60.2.12.12  user=root
+Jan  7 00:35:53 LabSZ sshd[26669]: input_userauth_request: invalid user butter [preauth]
+Jan  7 00:55:29 LabSZ sshd[26703]: pam_unix(sshd:auth): check pass; user unknown
+Jan 13 10:00:00 LabSZ sshd[46000]: Invalid user admin from 198.51.100.77
+Jan 13 10:00:00 LabSZ sshd[46000]: input_userauth_request: invalid user admin [preauth]
+Jan 13 10:00:01 LabSZ sshd[46001]: Invalid user oracle from 198.51.100.77
+Jan 13 10:00:01 LabSZ sshd[46001]: input_userauth_request: invalid user oracle [preauth]
+Jan 13 10:00:02 LabSZ sshd[46002]: Invalid user postgres from 198.51.100.77
+Jan 13 10:00:02 LabSZ sshd[46002]: input_userauth_request: invalid user postgres [preauth]
+Jan 13 10:00:03 LabSZ sshd[46003]: Invalid user mysql from 198.51.100.77
+Jan 13 10:00:03 LabSZ sshd[46003]: input_userauth_request: invalid user mysql [preauth]
+Jan 13 10:00:04 LabSZ sshd[46004]: Invalid user backup from 198.51.100.77
+Jan 13 10:00:04 LabSZ sshd[46004]: input_userauth_request: invalid user backup [preauth]
