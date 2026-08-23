@@ -179,3 +179,7 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# Demo log foles:
+!data/demo_logs/
+!data/demo_logs/*.log
