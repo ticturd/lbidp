@@ -1,4 +1,4 @@
-from detection.utilities import sensitive_users, get_username, create_alert
+from detection.utilities import sensitive_users, get_username, create_alert, alerts
 
 failed_attempts = {}
 ip_flags = {} 
@@ -12,6 +12,13 @@ invalid_users = {}
 def init_ip_flag(ip):
     if ip not in ip_flags:  
         ip_flags[ip] = []
+
+#Resets all variables once detection is finished, so that alerts can be triggered again if the file is put in for a second time.
+def reset_variables():
+    failed_attempts.clear()
+    ip_flags.clear()
+    invalid_users.clear()
+    alerts.clear()
 
 
 #Note: Message is converted to lowercase in main.
@@ -38,8 +45,7 @@ def detect_user_enumeration(ip, message):
     if invalid_users[ip] >= 3 and "user_enumeration" not in ip_flags[ip]:  
         ip_flags[ip].append("user_enumeration")  
         
-        username = get_username(message)
-        create_alert("user_enumeration", "medium", ip, username, message)
+        create_alert("user_enumeration", "medium", ip, '', message)
         print(f"User enumeration detected from IP: {ip}")
 
 

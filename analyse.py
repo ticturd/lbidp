@@ -16,14 +16,9 @@ def detect(logs):
 
         
 
-def main():
-    #Parses all the logs into a list format, then runs the detection.
-    log_file = get_log_file()
-    print(log_file)
-    logs = parser(log_file)
-    detect(logs)
+def analyse(log_file):
+    p_log_file = parser(log_file)    
+    detect(p_log_file)
 
+    return alerts
     
-
-if __name__ == "__main__":
-    main()

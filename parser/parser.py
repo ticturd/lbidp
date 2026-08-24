@@ -1,5 +1,6 @@
 import os   #Using this for file path stuff
 
+#This function may become completely irrelevant once the GUI is implemented, but I may find another use case for it.
 def get_log_file():
     
     demo_log_files = sorted(os.listdir("data/demo_logs"))
