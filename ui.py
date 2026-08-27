@@ -37,7 +37,7 @@ def format_alerts(alerts):
 def run_ui():
     dpg.create_context()
 
-    with dpg.window(label="Log Based Intrusion Detection Prototype"):
+    with dpg.window(label="Log Based Intrusion Detection Prototype", tag="main_window"):
         dpg.add_text("Welcome!")
 
         dpg.add_separator()
@@ -69,6 +69,7 @@ def run_ui():
     dpg.create_viewport(title="LBIDP", width=800, height=600)
     dpg.setup_dearpygui()
     dpg.show_viewport()
+    dpg.set_primary_window("main_window", True)
 
     while dpg.is_dearpygui_running():
         dpg.render_dearpygui_frame()
