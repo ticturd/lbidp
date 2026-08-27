@@ -1,27 +1,4 @@
-import os   #Using this for file path stuff
-
-#This function may become completely irrelevant once the GUI is implemented, but I may find another use case for it.
-def get_log_file():
-    
-    demo_log_files = sorted(os.listdir("data/demo_logs"))
-
-    for index, file in enumerate(demo_log_files):
-        print(f"{index + 1}. {file}")
-
-    while True:
-        try:
-            chosen_file = int(input())
-            if chosen_file in range(1, len(demo_log_files) + 1):
-                used_file = demo_log_files[chosen_file - 1]
-                return os.path.join("data/demo_logs", used_file)
-            else:
-                print("Choice out of range.")
-        except ValueError:
-            print("Incorrect value. Please enter a valid integer.")
-
-
-    
-
+#Log file is now selected in ui.py
 
 def get_timestamp(parts):
     timestamp_tokens = [parts[0], parts[1], parts[2]]
@@ -43,14 +20,7 @@ def get_message(line):
     message = line.split(":", 2)[-1].strip()  #This is doing 3 operations at once. In short, it just splits the line into three parts: timestamp and source, the middle parts, actual message.
     return message
 
-#Can't remember why I'm getting this, might have later refined this in rules.py but I'm not sure.
-def get_event_type(line):
-    before, sep, after = line.partition(" - ")    #Separator must be " - " with spaces in order to avoid confusing it with other dashes in the log line.
-    if sep == " - ":
-        event_type = after.strip()
-        return event_type
-    else:
-        return "N/A"
+#get_event_type removed, as it is irrelevant for the detection module.
 
 
 def get_ip(parts):
@@ -78,16 +48,15 @@ def parser(file_path):
 
             timestamp = get_timestamp(parts)
             source = get_source(parts)
-            event_type = get_event_type(log)
             message = get_message(log)
 
 
-            parsed_logs.append({"IP":ip,"Timestamp":timestamp, "Source":source, "Message":message, "Event Type":event_type})
+            parsed_logs.append({"IP":ip,"Timestamp":timestamp, "Source":source, "Message":message})
     
     except Exception as error:
         message = f"Log parsing failed: sample logs may be malformed. Error: {str(error)}"
         print(message)
-        return message
+        return []
 
     return parsed_logs
 

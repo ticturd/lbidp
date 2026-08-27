@@ -6,8 +6,6 @@ invalid_users = {}
 
 #Each function generates an alert, with rule broken, severity etc. for user interface.
 
-#Thresholds for flagging will be able to be changed by the user later. Right now it is just hard coded for testing purposes.
-
 #Initialises a list for the flagged ip, so reasons can be added. 
 def init_ip_flag(ip):
     if ip not in ip_flags:  

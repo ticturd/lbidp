@@ -2,7 +2,6 @@
 sensitive_users = ["root", "admin", "administrator", "sysadmin", "oracle", "postgres", "mysql", "backup", "operator"]
 
 
-
 def get_username(message):
     parts = message.split()     #Splitting message into parts so i can identify keywords in the log line for the username.
 
@@ -17,7 +16,6 @@ def get_username(message):
         
     else:
         return None
-
 
 
 alerts = []

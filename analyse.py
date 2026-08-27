@@ -1,4 +1,4 @@
-from parser.parser import get_log_file, parser
+from parser.parser import parser
 from detection.rules import init_ip_flag, detect_bruteforce, detect_user_enumeration, detect_sensitive_user_login, detect_break_in
 from detection.utilities import alerts
 

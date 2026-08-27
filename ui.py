@@ -5,12 +5,12 @@ import os
 
 #Utility for getting selected log file.
 def begin_analysis():
-    reset_variables()
 
     selected_log_file = dpg.get_value("selected_log_file")
 
     #No log file selected = empty string. 
     if selected_log_file != '':
+        reset_variables()  # Reset variables before starting a new analysis
         log_file = os.path.join("data/demo_logs", selected_log_file)
         results = analyse(log_file)
         format_alerts(results)
