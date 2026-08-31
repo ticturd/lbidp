@@ -20,13 +20,14 @@ def get_username(message):
 
 alerts = []
 
-def create_alert(rule, severity, ip, username, message):
+def create_alert(rule, severity, ip, username, message, explanation):
     alerts.append(
         {"rule" : rule,
          "severity" : severity,
          "ip" : ip,
          "username" : username,
-         "message" : message
+         "message" : message,
+         "explanation" : explanation
          }
     )
     

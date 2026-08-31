@@ -30,7 +30,7 @@ def detect_bruteforce(ip, message):
         ip_flags[ip].append("bruteforce")  
 
         username = get_username(message)
-        create_alert("bruteforce", "high", ip, username, message)
+        create_alert("bruteforce", "high", ip, username, message, "5 or more failed password attempts were detected from this IP address, indicating a possible brute-force attack.")
         print(f"Bruteforce detected from IP: {ip}")
 
 
@@ -43,7 +43,7 @@ def detect_user_enumeration(ip, message):
     if invalid_users[ip] >= 3 and "user_enumeration" not in ip_flags[ip]:  
         ip_flags[ip].append("user_enumeration")  
         
-        create_alert("user_enumeration", "medium", ip, '', message)
+        create_alert("user_enumeration", "medium", ip, '', message, "3 or more attempts to authenticate using invalid usernames were detected from this IP address, indicating possible user enumeration.")
         print(f"User enumeration detected from IP: {ip}")
 
 
@@ -60,7 +60,7 @@ def detect_sensitive_user_login(ip, message):
     # Sensitive user login
     if username in sensitive_users and "sensitive_user_login" not in ip_flags[ip]:  
         ip_flags[ip].append("sensitive_user_login")  
-        create_alert("sensitive_user_login", "high", ip, username, message)
+        create_alert("sensitive_user_login", "high", ip, username, message, "A successful login was detected for a configured sensitive user account.")
         print(f"Sensitive user login detected from IP {ip} for {username}")
 
 def detect_break_in(ip, message):
@@ -76,5 +76,5 @@ def detect_break_in(ip, message):
     # Login after bruteforce
     if "bruteforce" in ip_flags[ip] and "break_in" not in ip_flags[ip]:  
         ip_flags[ip].append("break_in")  
-        create_alert("break_in", "critical", ip, username, message)
+        create_alert("break_in", "critical", ip, username, message, "A successful login occurred from an IP address previously flagged for brute-force activity, indicating a possible successful intrusion.")
         print(f"Break in attempt detected from IP {ip} and Username {username}")

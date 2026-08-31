@@ -26,6 +26,8 @@ def format_alerts(alerts):
             f"[{alert['severity']}] {alert['rule']}\n"
             f"IP: {alert['ip']}\n"
             f"Username: {alert['username']}\n"
+            f"Message: {alert['message']}\n"
+            f"Explanation: {alert['explanation']}\n"
             "-------------------------"
         )
         formatted_alerts.append(formatted_alert)
