@@ -1,6 +1,6 @@
 from parser.parser import parser
 from detection.rules import init_ip_flag, detect_bruteforce, detect_user_enumeration, detect_sensitive_user_login, detect_break_in
-from detection.utilities import alerts
+
 
 
 def detect(logs):
@@ -17,8 +17,11 @@ def detect(logs):
         
 
 def analyse(log_file):
-    p_log_file = parser(log_file)    
+    p_log_file = parser(log_file)
+
+    if not p_log_file:
+        return None # Return None if parsing failed
+
     detect(p_log_file)
 
-    return alerts
     
