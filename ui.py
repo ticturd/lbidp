@@ -36,10 +36,10 @@ def format_alerts(alerts):
     formatted_alerts = []
     for alert in alerts:
         formatted_alert = (
+            f"Timestamp: {alert['timestamp']}\n"
             f"[{alert['severity']}] {alert['rule']}\n"
             f"IP: {alert['ip']}\n"
             f"Username: {alert['username']}\n"
-            f"Message: {alert['message']}\n"
             f"Explanation: {alert['explanation']}\n"
             "-------------------------"
         )
