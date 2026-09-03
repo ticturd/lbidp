@@ -20,7 +20,7 @@ def get_message(line):
     message = line.split(":", 2)[-1].strip()  #This is doing 3 operations at once. In short, it just splits the line into three parts: timestamp and source, the middle parts, actual message.
     return message
 
-#get_event_type removed, as it is irrelevant for the detection module.
+#get_event_type removed, as it is irrelevant for the program.
 
 
 def get_ip(parts):
@@ -31,28 +31,24 @@ def get_ip(parts):
     return "N/A"
 
 def parser(file_path):
-    raw_logs = []   
-    with open(file_path, "r") as file:
-        for line in file:
-            raw_logs.append(line.strip())
-
-
     parsed_logs = []
-    try: 
-        for log in raw_logs:           
-            parts = log.split() #For timestamp and source
 
-            ip = get_ip(parts)
-            if ip == "N/A":
-                continue
+    try:
+        with open(file_path, "r") as file:
+            for line in file:
+                log = line.strip()
+                parts = log.split() #For timestamp and source
 
-            timestamp = get_timestamp(parts)
-            source = get_source(parts)
-            message = get_message(log)
+                ip = get_ip(parts)
+                if ip == "N/A":
+                    continue
 
+                timestamp = get_timestamp(parts)
+                source = get_source(parts)
+                message = get_message(log)
 
-            parsed_logs.append({"IP":ip,"Timestamp":timestamp, "Source":source, "Message":message})
-    
+                parsed_logs.append({"IP" : ip, "Timestamp" : timestamp, "Source": source, "Message" : message})
+
     except Exception as error:
         message = f"Log parsing failed: sample logs may be malformed. Error: {str(error)}"
         print(message)

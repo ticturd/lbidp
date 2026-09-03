@@ -1,10 +1,9 @@
 from analyse import analyse
 from detection.rules import reset_variables
-from detection.utilities import alerts
 import dearpygui.dearpygui as dpg
 import os
 
-#Utility for getting selected log file.
+#Function for getting selected log file.
 def begin_analysis():
 
     selected_log_file = dpg.get_value("selected_log_file")
@@ -13,13 +12,17 @@ def begin_analysis():
     if selected_log_file != '':
         reset_variables()  # Reset variables before starting a new analysis
         log_file = os.path.join("data/demo_logs", selected_log_file)
-        analyse(log_file)
-        format_alerts(alerts)
+        results = analyse(log_file)
 
-        if alerts is None:
-            dpg.set_value("analysis_results", "Unable to analyse selected log file. Logs may be malformed.")
+        if results is None:
+            dpg.set_value(
+                "analysis_results",
+                "Unable to analyse selected log file. Logs may be malformed."
+            )
             dpg.configure_item("error_text", show=False)
-
+        else:
+            format_alerts(results)
+    
     else:
         dpg.configure_item("error_text", show=True)
     
